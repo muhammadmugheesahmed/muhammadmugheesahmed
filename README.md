@@ -60,42 +60,107 @@
 
 ---
 
-## 📈 GitHub Stats
+## 🏗️ System Architecture Spotlight
 
-<p align="center">
+**Automated HR & Resume Screening System**
+*A role-based architectural overview of my intelligent recruitment platform, detailing how Candidates, Employees, and Admins interact with the React frontend, FastAPI backend, and core AI models.*
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=muhammadmugheesahmed&show_icons=true&theme=tokyonight&hide_border=true"/>
+```mermaid
+graph TD
+    %% User Roles
+    Cand[Candidate]
+    Emp[Employee]
+    Adm[HR Admin]
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=muhammadmugheesahmed&layout=compact&theme=tokyonight&hide_border=true"/>
+    subgraph Client [Frontend Interface - ReactJS]
+        C_UI(Application Form)
+        E_UI(Employee Portal)
+        A_UI(Admin Dashboard)
+    end
 
-</p>
+    subgraph API [Backend Services - FastAPI]
+        Auth(Login & Auth)
+        Upload(Resume Upload API)
+        Emp_API(Employee CRUD API)
+        Chat(Chatbot Endpoint)
+        Rank(Shortlisting API)
+    end
 
----
+    subgraph Core [AI & Machine Learning Engine]
+        NLP[Text Extraction & NLP Processing]
+        XG[XGBoost Ranking Model]
+        LLM[LLM Chatbot Engine]
+    end
 
-## 🔥 GitHub Streak
+    %% 1. Candidate Flow
+    Cand -->|Fills Form & Uploads PDF| C_UI
+    C_UI --> Upload
+    Upload --> NLP
 
-<p align="center">
+    %% 2. Employee Flow
+    Emp -->|Logs In| Auth
+    Auth -->|Grants Access| E_UI
+    E_UI -->|Asks HR Queries| Chat
+    Chat --> LLM
+    LLM -->|Answers Queries| E_UI
 
-<img src="https://streak-stats.demolab.com?user=muhammadmugheesahmed&theme=tokyonight&hide_border=true"/>
+    %% 3. Admin Flow
+    Adm -->|Logs In| Auth
+    Auth -->|Grants Access| A_UI
+    A_UI -->|Manages Staff| Emp_API
+    A_UI -->|Inputs Job Role & Top 'N' Count| Rank
+    Rank -->|Triggers Model| XG
+    NLP -->|Extracted Features| XG
+    XG -->|Returns Top Ranked Resumes| A_UI
 
-</p>
+    %% Styling for clarity
+    style Cand fill:#10b981,stroke:#047857,stroke-width:2px,color:#ffffff
+    style Emp fill:#10b981,stroke:#047857,stroke-width:2px,color:#ffffff
+    style Adm fill:#10b981,stroke:#047857,stroke-width:2px,color:#ffffff
+    
+    style XG fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#ffffff
+    style NLP fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#ffffff
+    style LLM fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px,color:#ffffff
+```
+## 🏗️ System Architecture Spotlight
 
+**Enterprise Q&A RAG Pipeline**
+*A high-level view of how my document retrieval system processes queries, manages embeddings, and generates contextual responses.*
+
+```mermaid
+graph TD
+    A[User Query] -->|Natural Language| B(FastAPI Endpoint)
+    B --> C{LangChain Orchestrator}
+    C -->|1. Generate Embedding| D[Embedding Model]
+    D -->|2. Vector Search| E[(ChromaDB Vector Store)]
+    E -->|3. Retrieve Context| C
+    C -->|4. Prompt Formulation| F[Large Language Model]
+    F -->|5. Synthesize Context| C
+    C -->|6. JSON Response| B
+    B -->|Display Data| G[Frontend UI]
+    
+    style A fill:#10b981,stroke:#047857,stroke-width:2px
+    style E fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px
+    style F fill:#8b5cf6,stroke:#6d28d9,stroke-width:2px
+```
 ---
 
 ## 🌐 Connect With Me
 
 <p align="center">
 
-<a href="www.linkedin.com/in/mughees-ahmed-feb2003">
-<img src="https://skillicons.dev/icons?i=linkedin"/>
-</a>
+
 
 <a href="mailto:mugheesahmad39@gmail.com">
 <img src="https://skillicons.dev/icons?i=gmail"/>
 </a>
 
 <a href="https://muhammadmugheesahmed.github.io/Portfolio/">
-<img src="./assets/planet-earth/png" alt='Portfolio'>
+<img src="./assets/planet-earth.png" alt='Portfolio' width="46" height="46">
+</a>
+
+<a href="www.linkedin.com/in/mughees-ahmed-feb2003">
+<img src="https://skillicons.dev/icons?i=linkedin"/>
 </a>
 
 </p>

@@ -95,16 +95,7 @@
 </a>
 
 <a href="https://muhammadmugheesahmed.github.io/Portfolio/">
-<img <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-  <defs>
-    <linearGradient id="portfolioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ff0844" /> <!-- Vibrant Red/Pink -->
-      <stop offset="100%" stop-color="#ffb199" /> <!-- Soft Orange -->
-    </linearGradient>
-  </defs>
-  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" fill="none" stroke="url(#portfolioGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></rect>
-  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" fill="none" stroke="url(#portfolioGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg> <!-- You can change this to a web icon if preferred -->
+<img src="./assets/planet-earth/png" alt='Portfolio'>
 </a>
 
 </p>

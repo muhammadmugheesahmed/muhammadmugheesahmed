@@ -124,7 +124,7 @@ graph TD
 ```
 ## 🏗️ System Architecture Spotlight
 
-**Context FLow**
+**Context Flow**
 *A Full-stack RAG (Retrieval-Augmented Generation) application that allows you to chat with your documents. Its a high-level view of how my document retrieval system processes queries, manages embeddings, and generates contextual responses.*
 
 ```mermaid
